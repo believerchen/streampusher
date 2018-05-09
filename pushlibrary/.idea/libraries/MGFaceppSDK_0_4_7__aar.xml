@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="MGFaceppSDK-0.4.7:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/MGFaceppSDK-0.4.7.aar/f50ecc394e931c935cc83aab1e5ab11f/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/MGFaceppSDK-0.4.7.aar/f50ecc394e931c935cc83aab1e5ab11f/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

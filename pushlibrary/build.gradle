@@ -1,0 +1,64 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        externalNativeBuild {
+            cmake {
+                cppFlags "-std=c++11"
+            }
+            ndk {
+                abiFilters "armeabi-v7a"
+            }
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets.main {
+        jniLibs.srcDirs = ['src/main/jniLibs']
+        jni.srcDirs = []
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+
+    ////////////解决(请使用 -source 8 或更高版本以启用方法引用) 报错
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+
+
+    //liveplayer 相关
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+    compile 'com.squareup.retrofit2:converter-scalars:2.0.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    compile 'com.alibaba:fastjson:1.2.14'
+    compile 'com.squareup.okhttp3:okhttp:3.0.1'
+    //exo
+    compile 'com.google.android.exoplayer:exoplayer:r1.5.11'
+}

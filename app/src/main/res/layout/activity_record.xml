@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.believer.streampusher.MainActivity">
+
+    <com.believer.magicfilter.camera.CameraGlSurfaceView
+        android:id="@+id/surface"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/barLayout" />
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/barLayout"
+        android:background="#ff000000" />
+
+    <Button
+        android:id="@+id/start_push"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:text="推流" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/switchCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_toLeftOf="@+id/start_push"
+        app:srcCompat="@drawable/ic_switch_camera_white_24dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_above="@+id/ly_url"
+        android:id="@+id/relativeLayout">
+        <CheckBox
+            android:id="@+id/checkBox_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="红润" />
+
+        <Spinner
+            android:id="@+id/spinner_fps"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/checkBox_red"
+            android:entries="@array/fps"
+            android:layout_margin="5dp"
+            android:textColor="@color/colorAccent" />
+
+        <Spinner
+            android:id="@+id/spinner_rates"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/spinner_fps"
+            android:entries="@array/rates"
+            android:layout_margin="5dp"
+            android:textColor="@color/white" />
+
+        <Spinner
+            android:id="@+id/spinner_endcodes"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/spinner_rates"
+            android:layout_margin="5dp"
+            android:entries="@array/encodes"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/ly_fps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_above="@+id/start_push">
+
+        <TextView
+            android:id="@+id/text_fps"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="11dp"
+            android:text="当前fps：0" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ly_beauty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_above="@+id/ly_fps">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="美颜" />
+
+        <SeekBar
+            android:id="@+id/seek_beauty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/textView" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/ly_url"
+        android:layout_above="@+id/ly_beauty">
+
+        <TextView
+            android:id="@+id/text_url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="输入地址" />
+
+        <EditText
+            android:id="@+id/edit_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/text_url"
+            android:text="输入地址 rtmp" />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

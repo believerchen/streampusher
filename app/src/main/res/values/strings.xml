@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">streampusher</string>
+    <string name="title_activity_live_player">LivePlayer</string>
+</resources>

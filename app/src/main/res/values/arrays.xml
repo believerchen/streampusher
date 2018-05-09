@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="fps">
+        <item>15F</item>
+        <item>20F </item>
+        <item>25F</item>
+    </string-array>
+
+    <string-array name="rates">
+        <item>300k</item>
+        <item>500k</item>
+        <item>700k</item>
+        <item>1M</item>
+        <item>1.2M</item>
+    </string-array>
+
+    <string-array name="encodes">
+        <item>硬编</item>
+        <item>软编</item>
+    </string-array>
+</resources>
